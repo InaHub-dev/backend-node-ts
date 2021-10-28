@@ -40,7 +40,7 @@ export default class UserDAO implements UserDB {
     });
   }
 
-  public selectedUserByLogin(email: string, password: string) {
+  public selectUserByLogin(email: string, password: string) {
     const query = `SELECT *
     FROM User
     WHERE email = "${email}" && password = "${password}";`;
@@ -51,9 +51,16 @@ export default class UserDAO implements UserDB {
         }
         const notEmpty = results.length > 0;
         if (notEmpty) {
-          
+          const user = results.map((index: any) => {
+            return new User({
+              name: index.name,
+              age: parseInt(index.age, 10),
+              email: index.email,
+              password: index.password,
+            });
+          });
+          return resolve(user);
         }
-        return resolve(allUsers);
       });
     });
   }
