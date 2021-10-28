@@ -5,11 +5,19 @@ const userRouter = Router();
 const userDAO = new UserDAO();
 
 userRouter.get("/", async (req: Request, res: Response) => {
-  res.json(await userDAO.selectedAllUsers());
+  res.json(await userDAO.selectAllUsers());
 });
 
-// userRouter.post("/", async (req: Request, res: Response) => {
-//   res.json(await userDAO.selectedAllUsers());
-// });
+userRouter.get("/login", async (req: Request, res: Response) => {
+  const info = req.body;
+  try {
+    const login = await userDAO.selectUserByLogin(info.email, info.password);
+    console.log(login);
+    res.send(login)
+  } catch (err) {
+    console.log(err);
+  }
+});
+
 
 export default userRouter;
