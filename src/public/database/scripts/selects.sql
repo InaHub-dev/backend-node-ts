@@ -18,6 +18,10 @@ SELECT *
 FROM `Product`;
 
 SELECT *
+FROM `User`
+WHERE name = "Lang" && password = "batata123";
+
+SELECT *
 FROM `User`;
 
 -- Select Product by name

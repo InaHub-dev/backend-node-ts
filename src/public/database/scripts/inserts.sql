@@ -3,12 +3,12 @@
 #TRUNCATE TABLE User;
 #TRUNCATE TABLE `User_has_Product`;
 
-INSERT INTO User (`name`, `age`, `password`)
-VALUES ("Bruno", 21, "batata123");
-INSERT INTO User (`name`, `age`, `password`)
-VALUES ("Ronald", 12, "ronald443");
-INSERT INTO User (`name`, `age`, `password`)
-VALUES ("Rafael", 18, "l.lauraviow");
+INSERT INTO User (`name`, `age`, `password`, `email`)
+VALUES ("Bruno", 21, "batata123", "bruno@email.com");
+INSERT INTO User (`name`, `age`, `password`, `email`)
+VALUES ("Ronald", 12, "ronald443", "Ronald@email.com");
+INSERT INTO User (`name`, `age`, `password`, `email`)
+VALUES ("Rafael", 18, "l.lauraviow", "Rafael@email.com");
 
 select *
 from User;
