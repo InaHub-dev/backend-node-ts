@@ -6,6 +6,10 @@ WHERE User.idUser = 1;
 
 UPDATE User
 SET password = "newPassword123"
+WHERE User.email = 1 and User.password = 1;
+
+UPDATE User
+SET password = "newPassword123"
 WHERE name = "Lang" && password = "batata123" && `idUser` = 4 ;
 
 # Update Product price

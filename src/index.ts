@@ -20,7 +20,7 @@ const lang = new User({
 async function test() {
   // try {
     // const aux = await userDAO.createUser(lang);
-    const aux = await userDAO.selectUserByLogin("mail.com", "bata9ta123");
+    const aux = await userDAO.deleteUser("@", "a", "a");
     console.log(typeof aux);
   // } catch (err) {
   //   console.log(typeof err);

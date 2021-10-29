@@ -1,7 +1,6 @@
 -- Delete User by ID
-DELETE FROM `Product`
-WHERE `idProduct` = 1;
+DELETE FROM User WHERE email = "${email} and password = "${password}" and name = "${name}";
 
 -- Delete Product by ID
-DELETE FROM `User`
+DELETE  FROM `User`
 WHERE `idUser` = 1;
