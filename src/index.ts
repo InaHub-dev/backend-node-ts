@@ -18,13 +18,13 @@ const lang = new User({
 // console.log(lang.getPassword());
 
 async function test() {
-  try {
+  // try {
     // const aux = await userDAO.createUser(lang);
-    const aux = await userDAO.selectAllUsers();
-    console.log(aux);
-  } catch (err) {
-    console.log(err);
-  }
+    const aux = await userDAO.selectUserByLogin("mail.com", "bata9ta123");
+    console.log(typeof aux);
+  // } catch (err) {
+  //   console.log(typeof err);
+  // }
 }
 
 test()

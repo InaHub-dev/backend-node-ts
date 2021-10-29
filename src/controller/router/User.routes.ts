@@ -9,15 +9,23 @@ userRouter.get("/", async (req: Request, res: Response) => {
 });
 
 userRouter.get("/login", async (req: Request, res: Response) => {
-  const info = req.body;
+  const info: any = req.query;
   try {
     const login = await userDAO.selectUserByLogin(info.email, info.password);
     console.log(login);
-    res.send(login)
+    res.send(login);
   } catch (err) {
     console.log(err);
+    return res.status(404).send({
+      message: "This is an error!",
+    });
   }
 });
 
+userRouter.get("/marmota", async (req: Request, res: Response) => {
+  const info: any = req.query;
+  console.log(info.email, info.password);
+  res.json(info);
+});
 
 export default userRouter;
