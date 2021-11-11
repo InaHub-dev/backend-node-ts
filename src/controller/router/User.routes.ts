@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import UserDAO from "../../model/database/UserDAO";
+import UserDAO from "../database/UserDAO";
 import { User } from "../../model/User";
 const userRouter = Router();
 
@@ -11,7 +11,7 @@ userRouter.get("/", async (req: Request, res: Response) => {
 
 userRouter.get("/login", async (req: Request, res: Response) => {
   const info: any = req.query;
-  console.log(req);
+  console.log(info);
   try {
     const login = await userDAO.selectUserByLogin(info.email, info.password);
     console.log(login);

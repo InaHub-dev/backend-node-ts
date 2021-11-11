@@ -1,4 +1,4 @@
-import { User } from "../../User";
+import { User } from "../../../model/User";
 
 export default interface UserDB {
   createUser(user: User): Promise<unknown>;

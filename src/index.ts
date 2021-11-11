@@ -1,5 +1,5 @@
-import MySQL from "./model/database/MySql";
-import UserDAO from "./model/database/UserDAO";
+import MySQL from "./controller/database/MySql";
+import UserDAO from "./controller/database/UserDAO";
 import { User } from "./model/User";
 
 const userDAO = new UserDAO();
